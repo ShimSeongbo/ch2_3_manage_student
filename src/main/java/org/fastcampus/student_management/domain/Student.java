@@ -29,7 +29,22 @@ public class Student {
   public String getAddress() {
     return address;
   }
+
   public boolean isActivate() {
     return activated;
+  }
+
+  public void activate() {
+    if (this.activated) {
+      throw new IllegalStateException("학생은 이미 활성화 상태입니다.");
+    }
+    this.activated = true;
+  }
+
+  public void deactivate() {
+    if (!this.activated) {
+      throw new IllegalStateException("학생은 이미 비활성화 상태입니다.");
+    }
+    this.activated = false;
   }
 }
